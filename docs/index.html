@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fortführungsprognose selbst erstellen</title>
+<meta name="description" content="Leitfaden für Geschäftsführer: Was eine Fortführungsprognose (Fortbestehensprognose nach § 19 InsO) ist, welche Regeln gelten, was sie beim Berater kostet und ein Prompt, mit dem Sie sie selbst erstellen.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <p class="kicker"><a href="index.html">fortführungsprognose-selbst-erstellen</a></p>
+  <h1>Fortführungsprognose selbst erstellen</h1>
+  <p class="lead">Ein Leitfaden für Geschäftsführer: was die Prognose ist, welche Regeln gelten, was sie beim Berater kostet und wie Sie sie mit einer Vorlage selbst schreiben.</p>
+  <p class="meta">Stand: 13. Oktober 2026 · Allgemeine Information, keine Rechtsberatung</p>
+</header>
+
+<main>
+
+<section id="kurz">
+<h2>Das Wichtigste in einer Minute</h2>
+<ul>
+  <li>Eine GmbH mit negativem Eigenkapital ist nicht automatisch insolvent. Entscheidend ist, ob sie in den nächsten zwölf Monaten voraussichtlich alle Rechnungen bezahlen kann. Das prüft die Fortbestehensprognose nach § 19 Abs. 2 InsO.</li>
+  <li>Die Prognose ist Pflicht der Geschäftsführung, nicht des Steuerberaters. Sie dürfen sie selbst erstellen.</li>
+  <li>Ihr Kern ist eine ehrliche Liquiditätsplanung über zwölf Monate und eine schriftliche Begründung. Bei kleinen Gesellschaften mit aktueller Buchhaltung ist das in ein bis drei Arbeitstagen machbar.</li>
+  <li>Beim Berater kostet das je nach Umfang ab rund 1.000 € für einen Schnellcheck bis 15.000 € und mehr für ein Sanierungsgutachten.</li>
+  <li>Unten finden Sie <a href="#prompt">einen Prompt</a>, mit dem ChatGPT, Claude, Copilot oder Gemini Sie Schritt für Schritt durch die Prognose führt.</li>
+  <li>Aber: Eine selbst erstellte Prognose schützt Sie im Haftungsfall weniger als ein Gutachten eines unabhängigen Fachmanns. <a href="#profi">Wann Sie doch einen Profi brauchen</a>.</li>
+</ul>
+</section>
+
+<nav class="toc" aria-label="Inhalt">
+<p><strong>Inhalt</strong></p>
+<ol>
+  <li><a href="#worum">Worum es geht</a></li>
+  <li><a href="#regeln">Die Regeln</a></li>
+  <li><a href="#wann">Wann Sie eine Prognose brauchen</a></li>
+  <li><a href="#inhalt">Was in die Prognose gehört</a></li>
+  <li><a href="#fehler">Typische Fehler</a></li>
+  <li><a href="#kosten">Was es kostet, sie erstellen zu lassen</a></li>
+  <li><a href="#prompt">Selbst machen: der Prompt</a></li>
+  <li><a href="#profi">Wann Sie doch einen Profi brauchen</a></li>
+  <li><a href="#quellen">Quellen</a></li>
+</ol>
+</nav>
+
+<section id="worum">
+<h2>1. Worum es geht</h2>
+
+<p>Eine GmbH, UG, AG oder GmbH &amp; Co. KG muss Insolvenz anmelden, wenn sie zahlungsunfähig oder überschuldet ist. Überschuldet ist sie nach § 19 Abs. 2 InsO, wenn ihr Vermögen die Schulden nicht mehr deckt, <em>es sei denn</em>, die Fortführung des Unternehmens ist in den nächsten zwölf Monaten überwiegend wahrscheinlich.</p>
+
+<p>Dieser Halbsatz ist der Grund, warum es die Prognose gibt. Die Prüfung läuft in zwei Stufen:</p>
+<ol>
+  <li><strong>Prognose:</strong> Kann die Gesellschaft in den nächsten zwölf Monaten alle Verbindlichkeiten bei Fälligkeit bezahlen? Wenn ja, ist sie im Sinne des Insolvenzrechts nicht überschuldet, egal wie die Bilanz aussieht.</li>
+  <li><strong>Überschuldungsstatus:</strong> Nur wenn die Prognose negativ ist, wird das Vermögen zu Liquidationswerten den Schulden gegenübergestellt. Reicht es nicht, ist die Gesellschaft überschuldet und der Antrag fällig.</li>
+</ol>
+
+<p>Die Prognose ist also eine reine Zahlungsfähigkeitsprognose. Gewinne sind dafür nicht nötig. Ein Start-up mit Verlusten, dessen Finanzierung für die nächsten zwölf Monate gesichert ist, kann eine positive Prognose haben. Ein profitables Unternehmen, dem in sechs Monaten die Hausbank den Kredit kündigt, unter Umständen nicht.</p>
+
+<p class="note"><strong>Wichtig:</strong> Die Prognose hilft nur gegen den Insolvenzgrund Überschuldung. Gegen Zahlungsunfähigkeit (§ 17 InsO) hilft sie nicht. Wer heute fällige Rechnungen nicht bezahlen kann, braucht keine Prognose, sondern sofort einen Anwalt.</p>
+
+<h3>Zwei Begriffe, die oft verwechselt werden</h3>
+<dl>
+  <dt>Fortbestehensprognose (Insolvenzrecht)</dt>
+  <dd>Die Prognose nach § 19 Abs. 2 InsO. Sie entscheidet, ob Sie Insolvenzantrag stellen müssen. Um sie geht es auf dieser Seite.</dd>
+  <dt>Fortführungsprognose (Handelsrecht)</dt>
+  <dd>Die Annahme nach § 252 Abs. 1 Nr. 2 HGB, mit der Ihr Jahresabschluss zu Fortführungswerten statt zu Zerschlagungswerten aufgestellt wird. Danach fragt meist der Steuerberater.</dd>
+</dl>
+<p>Im Alltag sagen fast alle „Fortführungsprognose“ und meinen beides. Die Datengrundlage ist weitgehend dieselbe: eine belastbare Planung, vor allem der Liquidität. Wer die insolvenzrechtliche Prognose sauber erstellt, hat die Arbeit für die handelsrechtliche größtenteils schon erledigt.</p>
+</section>
+
+<section id="regeln">
+<h2>2. Die Regeln</h2>
+
+<dl class="rules">
+  <dt>Wer ist verantwortlich?</dt>
+  <dd>Die Geschäftsführung. Sie können sich helfen lassen, die Verantwortung bleibt bei Ihnen. Im Streitfall müssen Sie als Geschäftsführer darlegen und beweisen, dass Ihre Prognose positiv war. Was nicht schriftlich festgehalten ist, gilt im Zweifel als nicht geprüft.</dd>
+
+  <dt>Welcher Zeitraum?</dt>
+  <dd>Mindestens zwölf Monate ab dem Stichtag der Prognose (§ 19 Abs. 2 Satz 1 InsO). Für die drohende Zahlungsunfähigkeit (§ 18 InsO) gilt ein Zeitraum von 24 Monaten. Sie begründet keine Antragspflicht, ist aber ein Warnsignal und die Eintrittskarte in das Restrukturierungsverfahren nach StaRUG.</dd>
+
+  <dt>Wie sicher muss es sein?</dt>
+  <dd>„Überwiegend wahrscheinlich“, also mehr als 50 %. Das klingt großzügig. In der Praxis müssen Sie es aber mit Zahlen und Belegen begründen, nicht mit Zuversicht.</dd>
+
+  <dt>Was gehört hinein?</dt>
+  <dd>Nach der Rechtsprechung des Bundesgerichtshofs drei Dinge: ein tragfähiges Unternehmenskonzept, ein daraus abgeleiteter Finanzplan und eine wertende Gesamtaussage. Dazu kommt Ihr erklärter Wille, das Unternehmen fortzuführen. Eine reine Gewinn- und Verlustplanung genügt nicht. Maßgeblich ist die Liquidität, Monat für Monat.</dd>
+
+  <dt>Wann ist eine Schuld fällig?</dt>
+  <dd>Zum rechtlichen Fälligkeitstermin, nicht dann, wenn Sie sie bezahlen wollen. Dass ein Lieferant stillhält, verschiebt die Fälligkeit nicht.</dd>
+
+  <dt>Was zählt an Hilfe von außen?</dt>
+  <dd>Neue Kredite, Kapitalerhöhungen, Stundungen oder Forderungsverzichte dürfen Sie nur einplanen, wenn sie verbindlich zugesagt sind. Ein gutes Gespräch mit der Bank oder eine Absichtserklärung reicht nicht. Der Prüfungsstandard der Wirtschaftsprüfer (IDW S 11) verlangt hier eine rechtsverbindliche Zusage.</dd>
+
+  <dt>Wie oft?</dt>
+  <dd>Laufend. Die Prognose ist kein Dokument für die Schublade. Sobald die Ist-Zahlen deutlich vom Plan abweichen, müssen Sie neu rechnen. Seit 2021 verpflichtet § 1 StaRUG Geschäftsleiter ohnehin, Entwicklungen, die den Fortbestand gefährden können, fortlaufend zu überwachen.</dd>
+
+  <dt>Und wenn die Prognose negativ ist?</dt>
+  <dd>Dann kommt es auf den Überschuldungsstatus an. Ist die Gesellschaft überschuldet, müssen Sie ohne schuldhaftes Zögern Insolvenzantrag stellen, spätestens sechs Wochen nach Eintritt der Überschuldung. Bei Zahlungsunfähigkeit sind es höchstens drei Wochen (§ 15a InsO). Ab Insolvenzreife haften Sie grundsätzlich persönlich für Zahlungen, die Sie noch aus dem Gesellschaftsvermögen leisten (§ 15b InsO). Ein verspäteter Antrag ist strafbar, auch fahrlässig (§ 15a Abs. 4 und 5 InsO).</dd>
+</dl>
+</section>
+
+<section id="wann">
+<h2>3. Wann Sie eine Prognose brauchen</h2>
+<p>Nicht erst, wenn das Konto leer ist. Typische Auslöser:</p>
+<ul>
+  <li>Ihr Jahresabschluss zeigt einen „nicht durch Eigenkapital gedeckten Fehlbetrag“, also negatives Eigenkapital.</li>
+  <li>Ihr Steuerberater fragt, ob er den Abschluss unter der Annahme der Fortführung aufstellen kann. Er muss Sie auf erkennbare Insolvenzgründe und Ihre Pflichten daraus hinweisen (§ 102 StaRUG). Deshalb fragt er.</li>
+  <li>Die Hälfte des Stammkapitals ist durch Verluste aufgezehrt. Dann müssen Sie außerdem unverzüglich die Gesellschafterversammlung einberufen (§ 49 Abs. 3 GmbHG).</li>
+  <li>Ein großer Kunde fällt weg, eine Finanzierung läuft aus oder wird gekündigt, Sie zahlen Rechnungen regelmäßig später als vereinbart.</li>
+  <li>Die Bank verlangt eine „Fortführungsprognose“. Fragen Sie nach, was genau gemeint ist. Geht es um eine Kreditentscheidung, will die Bank oft ein Sanierungskonzept nach IDW S 6, und das ist deutlich mehr als eine Prognose.</li>
+</ul>
+</section>
+
+<section id="inhalt">
+<h2>4. Was in die Prognose gehört</h2>
+<p>Eine belastbare Prognose für eine kleine oder mittlere Gesellschaft besteht aus diesen Teilen. Der <a href="#prompt">Prompt</a> unten fragt sie der Reihe nach ab.</p>
+<ol class="steps">
+  <li><strong>Eckdaten:</strong> Gesellschaft, Stichtag, Prognosezeitraum, Anlass, Zahlen des letzten Abschlusses.</li>
+  <li><strong>Liquiditätsstatus zum Stichtag:</strong> Verfügbare Mittel (Konten, Kasse, zugesagte und nicht gekündigte Kreditlinien) gegen heute fällige Verbindlichkeiten. Dieser Schritt klärt, ob Sie überhaupt noch zahlungsfähig sind. Faustregel der Rechtsprechung: Eine Lücke von 10 % oder mehr, die sich nicht binnen drei Wochen schließen lässt, bedeutet in der Regel Zahlungsunfähigkeit.</li>
+  <li><strong>Unternehmenskonzept auf einer Seite:</strong> Was ist die Ursache der Krise, was ändern Sie, warum wird es dadurch besser?</li>
+  <li><strong>Liquiditätsplanung, monatlich, mindestens zwölf Monate:</strong> Einzahlungen nach tatsächlichem Zahlungseingang, Auszahlungen nach Fälligkeit. Löhne mit Lohnsteuer und Sozialversicherung, Miete, Leasing, Material, Umsatzsteuer, Steuervorauszahlungen, Zins und Tilgung, Altverbindlichkeiten, Einmalzahlungen wie Weihnachtsgeld oder Versicherungen.</li>
+  <li><strong>Annahmen mit Belegen:</strong> Auftragsbestand, Verträge, Zusagen, Plan-Ist-Vergleich der letzten Monate. Jede Annahme ohne Beleg ist ein Angriffspunkt.</li>
+  <li><strong>Risiken und schlechter Fall:</strong> Was passiert, wenn der Umsatz 15 % niedriger ausfällt oder Kunden später zahlen? Bürgschaften, laufende Prozesse und drohende Steuernachzahlungen gehören ebenfalls hinein.</li>
+  <li><strong>Ergebnis:</strong> Positiv, negativ oder nicht belastbar, mit Begründung in wenigen Sätzen und den Bedingungen, unter denen es kippt.</li>
+  <li><strong>Unterschrift, Datum, Ablage:</strong> Unterschreiben Sie die Prognose, informieren Sie die Gesellschafter und legen Sie sie mit allen Anlagen ab. Danach monatlich Plan gegen Ist prüfen.</li>
+</ol>
+</section>
+
+<section id="fehler">
+<h2>5. Typische Fehler</h2>
+<p>Aus der Beratungspraxis, unter anderem nach einer Übersicht von RSM Ebner Stolz (September 2026):</p>
+<ul>
+  <li><strong>Zu kurz geplant.</strong> Sechs Monate sehen oft gut aus, weil der Engpass im neunten Monat liegt.</li>
+  <li><strong>Gewinn statt Liquidität.</strong> Eine GuV-Planung zeigt nicht, ob am 15. eines Monats Geld für die Löhne da ist.</li>
+  <li><strong>Fälligkeiten geschoben.</strong> Die Rechnung, die Sie „erst im März zahlen“, ist trotzdem im Januar fällig.</li>
+  <li><strong>Hoffnung als Zahl.</strong> Der Kredit, „über den wir gerade sprechen“, gehört nicht in den Basisfall.</li>
+  <li><strong>Umsatzsteuer falsch getaktet.</strong> Die Zahllast geht schnell raus, Erstattungen kommen oft erst nach Wochen.</li>
+  <li><strong>Saisonalität ignoriert.</strong> Vorjahreszahlen einfach fortzuschreiben, funktioniert nur, wenn die Monate wirklich vergleichbar sind.</li>
+  <li><strong>Forderungen zu optimistisch.</strong> Geld von einem Kunden oder einer Schwestergesellschaft, die selbst in Schwierigkeiten ist, ist kein sicherer Zufluss.</li>
+  <li><strong>Eventualverbindlichkeiten vergessen.</strong> Bürgschaften, Garantien, Prozessrisiken und Steuerprüfungen.</li>
+  <li><strong>Einmal gemacht, nie wieder angesehen.</strong> Eine Prognose vom Januar sagt im Juli nichts mehr aus.</li>
+</ul>
+</section>
+
+<section id="kosten">
+<h2>6. Was es kostet, sie erstellen zu lassen</h2>
+<p>Feste Preise gibt es kaum. Die meisten Anbieter nennen einen Festpreis erst nach einem Erstgespräch, und der Aufwand hängt vor allem davon ab, ob Sie schon eine Planung haben. Diese Richtwerte geben eine Orientierung (alle Beträge netto):</p>
+
+<div class="table-wrap">
+<table class="costs">
+  <thead>
+    <tr><th>Leistung</th><th>Umfang</th><th>Kosten</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Leistung">Selbst erstellen (mit dieser Seite und dem Prompt)</td>
+      <td data-label="Umfang">1–3 Arbeitstage Ihrer Zeit, wenn die Buchhaltung aktuell ist</td>
+      <td data-label="Kosten">0 €</td>
+    </tr>
+    <tr>
+      <td data-label="Leistung">Schnellcheck durch einen spezialisierten Anbieter</td>
+      <td data-label="Umfang">Erste Einschätzung zu Überschuldung und Liquidität, ob sich eine volle Prognose lohnt</td>
+      <td data-label="Kosten">ab ca. 1.000 €<sup><a href="#q-preis1">[1]</a></sup></td>
+    </tr>
+    <tr>
+      <td data-label="Leistung">Fortbestehensprognose durch Steuerberater oder Sanierungsberater</td>
+      <td data-label="Umfang">Planung plausibilisieren oder aufbauen, schriftliche Beurteilung</td>
+      <td data-label="Kosten">ca. 2.000–11.000 €<sup><a href="#q-schaetzung">[2]</a></sup></td>
+    </tr>
+    <tr>
+      <td data-label="Leistung">Sanierungsgutachten nach IDW S 6, Umsatz unter 5 Mio. €</td>
+      <td data-label="Umfang">ca. 14–16 Beratertage, inkl. Fortbestehensprognose</td>
+      <td data-label="Kosten">ca. 15.000–20.000 €<sup><a href="#q-preis2">[3]</a></sup></td>
+    </tr>
+    <tr>
+      <td data-label="Leistung">Sanierungsgutachten nach IDW S 6, Umsatz bis 20 Mio. €</td>
+      <td data-label="Umfang">ca. 26 Beratertage</td>
+      <td data-label="Kosten">ca. 35.000 €<sup><a href="#q-preis2">[3]</a></sup></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="small" id="q-schaetzung">[2] Eigene Schätzung: 2 bis 8 Beratertage zu rund 1.000 bis 1.400 € pro Tag. Der Tagessatz ist aus den Richtwerten für S-6-Gutachten in Zeile [3] abgeleitet. Holen Sie sich immer ein schriftliches Angebot.</p>
+
+<h3>Zuschuss vom Staat</h3>
+<p>Kleine und mittlere Unternehmen können über das BAFA-Programm „Förderung von Unternehmensberatungen für KMU“ einen Zuschuss bekommen. Förderfähig sind höchstens 3.500 € Beraterhonorar. In den alten Bundesländern einschließlich Berlin gibt es 50 % davon, also höchstens 1.750 €, in den neuen Bundesländern mehr. Der Antrag muss vor Beginn der Beratung gestellt werden. Das Programm läuft nach aktuellem Stand bis Ende 2026. Ihre IHK berät dazu.</p>
+</section>
+
+<section id="prompt">
+<h2>7. Selbst machen: der Prompt</h2>
+<p>Dieser Text macht aus einem KI-Assistenten einen strengen Gesprächspartner, der Sie durch alle Schritte führt, nachfragt, rechnet und am Ende einen Entwurf Ihrer Prognose schreibt. Er funktioniert mit ChatGPT, Claude, Microsoft Copilot und Google Gemini.</p>
+
+<h3>So gehen Sie vor</h3>
+<ol>
+  <li>Legen Sie bereit: letzten Jahresabschluss, aktuelle BWA mit Summen- und Saldenliste, Offene-Posten-Listen (Kunden und Lieferanten), Kontoauszüge, Kredit-, Miet- und Leasingverträge, Steuerbescheide, Auftragsbestand.</li>
+  <li>Öffnen Sie einen neuen Chat und kopieren Sie den Prompt hinein.</li>
+  <li>Beantworten Sie die Fragen. Sie können Dateien hochladen, wenn Ihr Programm das unterstützt.</li>
+  <li>Prüfen Sie jede Zahl im Ergebnis gegen Ihre Unterlagen. KI-Assistenten verrechnen sich gelegentlich. Übernehmen Sie die Planung am besten in Excel und rechnen Sie dort nach.</li>
+  <li>Unterschreiben Sie den Entwurf erst, wenn Sie hinter jeder Annahme stehen.</li>
+</ol>
+
+<p class="note"><strong>Datenschutz:</strong> Sie geben vertrauliche Unternehmenszahlen ein. Nutzen Sie ein geschäftliches Konto, bei dem Ihre Eingaben nicht zum Training verwendet werden (z. B. Team- oder Enterprise-Tarife), oder schalten Sie das Training in den Einstellungen ab. Lassen Sie Namen von Mitarbeitern und Kunden weg, wo sie nicht nötig sind.</p>
+
+<div class="prompt-head">
+  <span>Prompt</span>
+  <span><button type="button" id="copy">Prompt kopieren</button> <a href="prompt.txt" download>als Textdatei</a></span>
+</div>
+<pre id="prompt-text">ROLLE
+Du hilfst mir, dem Geschäftsführer einer deutschen haftungsbeschränkten Gesellschaft (z. B. GmbH, UG, AG, GmbH &amp; Co. KG), eine insolvenzrechtliche Fortbestehensprognose nach § 19 Abs. 2 InsO zu erstellen. Umgangssprachlich heißt sie oft „Fortführungsprognose“. Arbeite wie ein sorgfältiger, kritischer Sanierungsberater: genau, nüchtern, ohne Schönfärberei. Sprich mich mit „Sie“ an und antworte auf Deutsch.
+
+RECHTLICHER RAHMEN (Stand Oktober 2026)
+Nimm diese Punkte als Grundlage. Wenn dein eigenes Wissen davon abweicht, weise mich darauf hin, statt still etwas anderes anzunehmen.
+- Überschuldung liegt vor, wenn das Vermögen die bestehenden Verbindlichkeiten nicht mehr deckt, es sei denn, die Fortführung des Unternehmens ist in den nächsten zwölf Monaten nach den Umständen überwiegend wahrscheinlich (§ 19 Abs. 2 Satz 1 InsO).
+- Die Prognose ist eine Zahlungsfähigkeitsprognose: Kann die Gesellschaft im Prognosezeitraum alle Verbindlichkeiten bei Fälligkeit bezahlen? „Überwiegend wahrscheinlich“ bedeutet mehr als 50 %.
+- Eine Prognose braucht: (1) den Willen der Geschäftsführung, das Unternehmen fortzuführen, (2) ein schlüssiges Unternehmenskonzept, (3) eine daraus abgeleitete Liquiditätsplanung über mindestens 12 Monate ab Stichtag, mindestens monatlich, (4) eine begründete Gesamtaussage. Eine reine Ergebnisplanung (GuV) reicht nicht.
+- Verbindlichkeiten werden zum rechtlichen Fälligkeitszeitpunkt angesetzt, nicht zu dem Zeitpunkt, zu dem ich sie bezahlen möchte. Dass ein Gläubiger stillhält, ändert die Fälligkeit nicht.
+- Beiträge Dritter (neue Kredite, Kapitalzuführung, Stundungen, Forderungsverzichte, Rangrücktritte) setzt du nur an, wenn sie verbindlich zugesagt sind. Absichten, Gespräche und mündliche Signale reichen nicht.
+- Die Prognose schützt nur vor Überschuldung, nicht vor Zahlungsunfähigkeit (§ 17 InsO). Ist die Gesellschaft schon zahlungsunfähig, ist die Prognose hinfällig.
+- Zahlungsunfähigkeit liegt nach der Rechtsprechung in der Regel vor, wenn die Lücke zwischen fälligen Verbindlichkeiten und verfügbaren Mitteln 10 % oder mehr beträgt und nicht innerhalb von drei Wochen geschlossen werden kann.
+- Bei Zahlungsunfähigkeit oder Überschuldung muss der Geschäftsführer ohne schuldhaftes Zögern Insolvenzantrag stellen, spätestens drei Wochen nach Eintritt der Zahlungsunfähigkeit bzw. sechs Wochen nach Eintritt der Überschuldung (§ 15a InsO). Ab Insolvenzreife haftet er grundsätzlich persönlich für Zahlungen aus dem Gesellschaftsvermögen (§ 15b InsO).
+
+ABLAUF
+Gehe Schritt für Schritt vor. Stelle pro Schritt höchstens fünf Fragen auf einmal und warte auf meine Antworten. Wenn ich etwas nicht weiß, sag mir, wo ich es finde (BWA, Summen- und Saldenliste, Offene-Posten-Listen, Kontoauszüge, Kredit- und Mietverträge, Steuerbescheide). Wenn ich Dateien hochlade, werte sie aus und nenne mir, welche Zahlen du daraus übernommen hast.
+
+Schritt 1 – Eckdaten
+Firma, Rechtsform, Branche, Zahl der Mitarbeiter, Stichtag der Prognose, Geschäftsjahr, Zahlen des letzten Jahresabschlusses (Eigenkapital, Bilanzsumme, Jahresergebnis), Anlass der Prognose (z. B. negatives Eigenkapital, Nachfrage des Steuerberaters oder der Bank).
+
+Schritt 2 – Liquiditätsstatus zum Stichtag
+Stelle die sofort verfügbaren Mittel (Bank, Kasse, zugesagte und nicht gekündigte, nicht ausgeschöpfte Kreditlinien) den heute fälligen Verbindlichkeiten gegenüber (Lieferanten, Löhne, Sozialversicherung, Steuern, Miete, Kreditraten). Berechne die Deckungslücke in Prozent. Prüfe zusätzlich die nächsten drei Wochen. Liegt die Lücke bei 10 % oder mehr und lässt sie sich nicht innerhalb von drei Wochen schließen, sag mir das als Erstes und unmissverständlich: Dann liegt Zahlungsunfähigkeit nahe, ich muss sofort einen Fachanwalt für Insolvenz- und Sanierungsrecht oder einen erfahrenen Sanierungsberater einschalten, und eine Fortbestehensprognose hilft mir nicht weiter. Mach erst weiter, wenn ich das ausdrücklich bestätige.
+
+Schritt 3 – Unternehmenskonzept
+Frag nach den Ursachen der Krise, dem Geschäftsmodell und den geplanten Änderungen. Fasse das Konzept auf höchstens einer Seite zusammen: Warum wird es besser, und woran lässt sich das festmachen? Markiere schwache Stellen.
+
+Schritt 4 – Liquiditätsplanung
+Erstelle mit mir einen Monatsplan für mindestens 12 Monate ab Stichtag. Mindestens diese Zeilen:
+- Anfangsbestand
+- Einzahlungen: Umsätze nach tatsächlichem Zahlungseingang (Zahlungsziele und Ausfälle berücksichtigen), sonstige Einzahlungen, Umsatzsteuer-Erstattungen mit realistischer Verzögerung
+- Auszahlungen: Material und Wareneinkauf, Personal (Netto, Lohnsteuer, Sozialversicherung), Miete und Leasing, sonstige Betriebskosten, Umsatzsteuer-Zahllast (Fälligkeit nach Voranmeldung bzw. Dauerfristverlängerung), Vorauszahlungen auf Körperschaft- und Gewerbesteuer, Zins und Tilgung, Investitionen, Altverbindlichkeiten nach Fälligkeit, Einmalzahlungen (z. B. Weihnachtsgeld, Versicherungen, Jahresabschlusskosten)
+- Saldo des Monats, Endbestand, verfügbare Kreditlinie, freie Liquidität
+Berücksichtige Saisonalität. Zeig die Tabelle als Markdown-Tabelle und zusätzlich als CSV mit Semikolon und deutschem Zahlenformat, damit ich sie in Excel übernehmen kann. Rechne alle Summen ein zweites Mal nach und sag mir, dass du das getan hast.
+
+Schritt 5 – Annahmen und Nachweise
+Liste jede wesentliche Annahme mit Begründung und Beleg auf (z. B. Auftragsbestand, Rahmenverträge, Plan-Ist-Vergleich der letzten 6 bis 12 Monate). Markiere Annahmen ohne Beleg als „unbelegt“. Nicht verbindlich zugesagte Beiträge Dritter nimmst du aus dem Basisfall heraus.
+
+Schritt 6 – Risiken und schlechter Fall
+Rechne einen zweiten Fall mit vorsichtigeren Annahmen, passend zu meiner Lage (z. B. weniger Umsatz, spätere Zahlungseingänge, Wegfall des größten Kunden, höhere Kosten). Frag nach Bürgschaften, Garantien, Patronatserklärungen, laufenden Rechtsstreiten, drohenden Steuer- oder Sozialversicherungsnachforderungen und Forderungen gegen verbundene oder wackelige Schuldner. Bilde sie im Plan ab, wenn sie im Prognosezeitraum fällig werden können.
+
+Schritt 7 – Ergebnis
+Formuliere eine klare Aussage: positiv, negativ oder nicht belastbar. Positiv nur, wenn die Liquidität im Basisfall in jedem Monat ausreicht und die tragenden Annahmen belegt sind. Begründe das Ergebnis in wenigen Sätzen und nenne die Bedingungen, unter denen es kippt. Wenn das Ergebnis negativ oder nicht belastbar ist, sag mir klar, dass ich ohne schuldhaftes Zögern rechtlichen Rat brauche, weil Antragsfristen laufen können.
+
+Schritt 8 – Dokument
+Erstelle das fertige Prognosedokument mit dieser Gliederung:
+1. Gesellschaft, Stichtag, Prognosezeitraum, Ersteller
+2. Anlass und Ausgangslage (inkl. Vermögenslage laut letztem Abschluss)
+3. Liquiditätsstatus zum Stichtag
+4. Krisenursachen und Unternehmenskonzept
+5. Liquiditätsplanung (Tabelle) mit Erläuterung der Annahmen
+6. Maßnahmen, Umsetzungsstand und Nachweise
+7. Risiken, schlechter Fall, Eventualverbindlichkeiten
+8. Gesamturteil mit Begründung
+9. Überwachung: monatlicher Plan-Ist-Vergleich und Auslöser für eine sofortige Neubewertung
+10. Ort, Datum, Unterschrift der Geschäftsführung, Liste der Anlagen
+
+REGELN FÜR DICH
+- Erfinde keine Zahlen. Fehlt eine Zahl, frag nach. Musst du schätzen, kennzeichne die Schätzung deutlich als Platzhalter.
+- Sei vorsichtig statt optimistisch. Im Zweifel streichst oder kürzt du eine Annahme.
+- Widersprich mir, wenn meine Annahmen unrealistisch sind, und sag warum.
+- Sag mir deutlich, wenn meine Lage zu knapp oder zu komplex ist, um sie allein zu beurteilen. Das gilt besonders bei: knapper oder fehlender Liquidität, gekündigten oder auslaufenden Krediten, Rückständen beim Finanzamt oder bei der Sozialversicherung, Vollstreckungen, Konzernverflechtungen oder Cash-Pooling, einer Bank, die ein Sanierungsgutachten verlangt, oder einer Prognose, die nur mit einer einzigen großen Maßnahme aufgeht. Empfiehl dann einen Fachanwalt für Insolvenz- und Sanierungsrecht oder einen Steuerberater bzw. Wirtschaftsprüfer mit Sanierungserfahrung.
+- Weise am Ende darauf hin, dass das Dokument ein Entwurf ist, den ich als Geschäftsführer prüfen, verantworten, unterschreiben und mindestens monatlich aktualisieren muss, und dass es keine Rechtsberatung ersetzt.
+
+Beginne jetzt mit Schritt 1.</pre>
+<p class="small" id="copy-status" aria-live="polite"></p>
+</section>
+
+<section id="profi">
+<h2>8. Wann Sie doch einen Profi brauchen</h2>
+
+<p>Sie dürfen die Prognose selbst machen. Für Ihre persönliche Haftung gibt es aber einen Unterschied, den Sie kennen sollten.</p>
+
+<p>Ein Geschäftsführer, der die Insolvenzreife nicht selbst zuverlässig beurteilen kann, muss sich nach der Rechtsprechung des Bundesgerichtshofs bei ersten Krisenanzeichen unverzüglich von einer unabhängigen, fachlich qualifizierten Person beraten lassen. Er muss ihr alle Unterlagen offenlegen, auf ein schnelles Ergebnis drängen und das Ergebnis auf Plausibilität prüfen (BGH, II ZR 48/06 und II ZR 171/10). Wer das tut und dem Rat folgt, kann sich später entlasten, auch wenn der Rat falsch war.</p>
+
+<p>Eine selbst erstellte Prognose, auch eine mit KI-Hilfe, bietet diesen Schutz nicht. Ist sie falsch, tragen Sie das Risiko allein. Das kann die persönliche Haftung für jede Zahlung nach Insolvenzreife bedeuten.</p>
+
+<p>Holen Sie deshalb fachliche Hilfe, wenn einer dieser Punkte zutrifft:</p>
+<ul>
+  <li>Sie können fällige Rechnungen schon jetzt nicht vollständig bezahlen, oder das droht in den nächsten Wochen.</li>
+  <li>Die Planung geht nur knapp auf oder nur mit einer einzigen großen Maßnahme, etwa einem neuen Kredit oder einem Investor.</li>
+  <li>Es gibt Rückstände beim Finanzamt oder bei den Krankenkassen, oder es laufen Vollstreckungen.</li>
+  <li>Ein Kredit ist gekündigt, läuft bald aus, oder die Bank verlangt ein Gutachten.</li>
+  <li>Ihre Gesellschaft hängt in einem Konzern, nimmt an einem Cash-Pool teil oder hat hohe Forderungen gegen verbundene Unternehmen.</li>
+  <li>Ihre Buchhaltung ist nicht aktuell, und Sie wissen nicht genau, wo Sie stehen.</li>
+  <li>Sie haben persönlich gebürgt, oder die Gesellschafter sind sich über den Kurs uneinig.</li>
+</ul>
+<p>Ansprechpartner sind Fachanwälte für Insolvenz- und Sanierungsrecht sowie Steuerberater, Wirtschaftsprüfer und Unternehmensberater mit Sanierungserfahrung. Viele Industrie- und Handelskammern bieten vertrauliche Erstgespräche für Unternehmen in Schwierigkeiten an.</p>
+<p>Auch dann lohnt sich die Vorarbeit mit dem Prompt: Ein Berater, der eine geordnete Liquiditätsplanung bekommt, braucht weniger Tage.</p>
+</section>
+
+<section id="quellen">
+<h2>9. Quellen</h2>
+<h3>Gesetze</h3>
+<ul class="sources">
+  <li><a href="https://www.gesetze-im-internet.de/inso/__19.html">§ 19 InsO – Überschuldung</a></li>
+  <li><a href="https://www.gesetze-im-internet.de/inso/__17.html">§ 17 InsO – Zahlungsunfähigkeit</a> und <a href="https://www.gesetze-im-internet.de/inso/__18.html">§ 18 InsO – Drohende Zahlungsunfähigkeit</a></li>
+  <li><a href="https://www.gesetze-im-internet.de/inso/__15a.html">§ 15a InsO – Antragspflicht</a> und <a href="https://www.gesetze-im-internet.de/inso/__15b.html">§ 15b InsO – Zahlungen nach Insolvenzreife</a></li>
+  <li><a href="https://www.gesetze-im-internet.de/starug/__1.html">§ 1 StaRUG – Krisenfrüherkennung</a> und <a href="https://www.gesetze-im-internet.de/starug/__102.html">§ 102 StaRUG – Hinweispflichten</a></li>
+  <li><a href="https://www.gesetze-im-internet.de/hgb/__252.html">§ 252 HGB – Bewertungsgrundsätze</a></li>
+  <li><a href="https://www.gesetze-im-internet.de/gmbhg/__49.html">§ 49 GmbHG – Einberufung der Versammlung</a></li>
+</ul>
+<h3>Rechtsprechung</h3>
+<ul class="sources">
+  <li>BGH, Urteil vom 14.05.2007 – II ZR 48/06 (Entlastung durch Rat eines unabhängigen Fachmanns)</li>
+  <li><a href="https://lexetius.com/2012,2025">BGH, Urteil vom 27.03.2012 – II ZR 171/10</a> (Pflicht, sich bei Krisenanzeichen unverzüglich beraten zu lassen)</li>
+  <li>BGH, Urteil vom 24.05.2005 – IX ZR 123/04 (Abgrenzung Zahlungsunfähigkeit und Zahlungsstockung, 10-%-Grenze)</li>
+</ul>
+<h3>Fachbeiträge und Preise</h3>
+<ul class="sources">
+  <li><a href="https://www.ebnerstolz.de/de/unser-angebot/leistungen/consulting/management-consulting/restructuring/insolvenzrechtliche-fortbestehensprognose-haftungsrisiken-geschaeftsfuehrung-112791.html">RSM Ebner Stolz: Die insolvenzrechtliche Fortbestehensprognose (22.09.2026)</a></li>
+  <li><a href="https://kas-restrukturierung.de/leistungen/fortfuehrungsprognose-fortbestehensprognose/">KAS Restrukturierung: Fortführungsprognose nach § 252 HGB</a> (Abgrenzung, Ablauf, Anforderungen an Maßnahmen)</li>
+  <li id="q-preis1">[1] <a href="https://fortfuehrungsprognose24.de/">fortfuehrungsprognose24.de: Schnellcheck zum Festpreis von 1.000 € netto</a></li>
+  <li id="q-preis2">[3] <a href="https://fortfuehrungsprognose24.de/idw-s6/idw-s6-gutachten-kosten/">fortfuehrungsprognose24.de: Richtwerte für IDW-S-6-Gutachten</a></li>
+  <li><a href="https://www.ihk.de/giessen-friedberg/geschaeftsbereiche/innovation/gefoerderte-gruendungs-und-mittelstandsberatung-6928286">IHK Gießen-Friedberg: BAFA-Förderung von Unternehmensberatungen für KMU</a></li>
+</ul>
+<p class="small">Die Preisangaben stammen von einzelnen Anbietern und sind nicht repräsentativ. Sie sollen eine Größenordnung zeigen.</p>
+</section>
+
+<section id="unterstuetzen" class="support">
+<h2>Hat Ihnen das geholfen?</h2>
+<p>Diese Seite ist kostenlos, ohne Werbung und ohne Tracking. Wenn sie Ihnen Zeit oder Beraterkosten gespart hat, freue ich mich über 5 € für Betrieb und Aktualisierung.</p>
+<p><a class="button" href="https://www.paypal.me/Steffenbuenau/5EUR" rel="noopener">5 € per PayPal senden</a></p>
+<p class="small">Freiwillig und ohne Gegenleistung. Sie verlassen dafür diese Seite und gehen zu PayPal. Die Zahlung geht an Steffen von Bünau.</p>
+</section>
+
+<section id="hinweis">
+<h2>Hinweis</h2>
+<p class="small">Diese Seite gibt einen allgemeinen Überblick über die Rechtslage in Deutschland, Stand Oktober 2026. Sie ersetzt keine Rechts- oder Steuerberatung im Einzelfall. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte und für Ergebnisse, die mit dem Prompt erzeugt werden, wird keine Haftung übernommen.</p>
+</section>
+
+</main>
+
+<footer>
+  <p><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · Keine Cookies, kein Tracking</p>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var pre = document.getElementById('prompt-text');
+  var status = document.getElementById('copy-status');
+  function done(ok) {
+    status.textContent = ok ? 'Kopiert. Jetzt in einen neuen Chat einfügen.' : 'Kopieren hat nicht geklappt. Bitte den Text markieren und manuell kopieren.';
+    btn.textContent = ok ? 'Kopiert' : 'Prompt kopieren';
+    if (ok) setTimeout(function () { btn.textContent = 'Prompt kopieren'; }, 2500);
+  }
+  function fallback(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    done(ok);
+  }
+  btn.addEventListener('click', function () {
+    var text = pre.textContent;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallback(text); });
+    } else {
+      fallback(text);
+    }
+  });
+})();
+</script>
+</body>
+</html>
